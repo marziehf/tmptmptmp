@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Marzieh Fadaee | Learning Topic-Sensitive Word Representations</title>
+  <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+  <link rel="shortcut icon" href="https://staff.fnwi.uva.nl/m.fadaee/assets/img/favicon.ico">
+
+  <link rel="stylesheet" href="https://staff.fnwi.uva.nl/m.fadaee/assets/css/main.css">
+  <link rel="canonical" href="https://staff.fnwi.uva.nl/m.fadaee/projects/1_project/">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    
+    <span class="site-title">
+        
+        <strong>Marzieh</strong> Fadaee
+    </span>
+    
+
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+      <div class="trigger">
+        <!-- About -->
+        <a class="page-link" href="https://staff.fnwi.uva.nl/m.fadaee/">about</a>
+
+        <!-- Blog -->
+        <a class="page-link" href="https://staff.fnwi.uva.nl/m.fadaee/files/CV.pdf">vitae</a>
+
+        <!-- Pages -->
+        
+          
+        
+          
+        
+          
+        
+          
+            <a class="page-link" href="https://staff.fnwi.uva.nl/m.fadaee/projects/">projects</a>
+          
+        
+          
+            <a class="page-link" href="https://staff.fnwi.uva.nl/m.fadaee/publications/">publications</a>
+          
+        
+          
+            <a class="page-link" href="https://staff.fnwi.uva.nl/m.fadaee/teaching/">teaching</a>
+          
+        
+          
+        
+          
+        
+
+        <!-- CV link -->
+        <!-- <a class="page-link" href="https://staff.fnwi.uva.nl/m.fadaee/assets/pdf/CV.pdf">vitae</a> -->
+
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Learning Topic-Sensitive Word Representations</h1>
+    <h5 class="post-description">learning topic-sensitive word embeddings</h5>
+  </header>
+
+  <article class="post-content Learning Topic-Sensitive Word Representations clearfix">
+    <p>Having one representation per word fails to capture polysemy.
+We propose an approach to learn multiple representations per word by topic-modeling the context with Hierarchical Dirichlet Process (HDP).</p>
+
+<p>You can find the published work <a href="http://aclweb.org/anthology/P17-2070">here</a>.</p>
+
+<p>We hypothesize that the distributions of topics of documents where a particular word occurs is a good signal to discriminate between different senses of the word.</p>
+
+<p>As an example:</p>
+
+<p><img class="center2" src="https://staff.fnwi.uva.nl/m.fadaee/assets/img/tse1.png" alt="" title="example" /></p>
+
+<p>Based on this, we propose 3 models of using distributions of topics in learning embeddings:</p>
+
+<p><img class="col three" src="https://staff.fnwi.uva.nl/m.fadaee/assets/img/tse2.png" alt="" title="models" /></p>
+<div class="col three caption">
+    HTLE, HTLEadd, and STLE.
+</div>
+
+<ul>
+<li><b>HTLE</b>: Uses the hard topic labels resulting from HDP sampling to learn representations</li>
+<li><b>HTLEadd</b>: Uses the sum of the hard topic-labeled representation and the generic (i.e. unlabeled) representation</li>
+<li><b>STLE</b>: Uses the topic distribution to compute a weighted sum over the word-topic representations</li>
+</ul>
+
+<p>The learned embeddings capture polysemy in the language:</p>
+
+<p><img class="center" src="https://staff.fnwi.uva.nl/m.fadaee/assets/img/tse3.png" alt="" title="example" /></p>
+
+<p>This is the list of nearest neighbors of the word <em>bat</em> in different representation spaces using cosine similarity. <a href="http://mccormickml.com/2016/04/12/googles-pretrained-word2vec-model-in-python/">Pre-trained Skipgram</a> and <a href="https://nlp.stanford.edu/projects/glove/">Pre-trained GloVe</a> are pre-trained embeddings on big data. Skipgram is the <em>Skipgram</em> baseline and <em>HTLE</em> is our proposed model, both trained on Wikipedia.</p>
+
+<p>We evaluate the embeddings on the lexical substitution task. Here are the results:</p>
+
+<p><img class="center" src="https://staff.fnwi.uva.nl/m.fadaee/assets/img/tse4.png" alt="" title="results" /></p>
+
+<p>The code is available <a href="https://github.com/marziehf/TS_Embeddings">here</a>.</p>
+
+<p>To cite this paper:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> @InProceedings{fadaee-bisazza-monz:2017:Short1,
+ author    = {Fadaee, Marzieh  and  Bisazza, Arianna  and  Monz, Christof},
+ title     = {Learning Topic-Sensitive Word Representations},
+ booktitle = {Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)},
+ month     = {July},
+ year      = {2017},
+ address   = {Vancouver, Canada},
+ publisher = {Association for Computational Linguistics},
+ pages     = {441--447},
+ url       = {http://aclweb.org/anthology/P17-2070}
+}
+</code></pre></div></div>
+
+  </article>
+
+  
+
+  
+
+</div>
+
+      </div>
+    </div>
+
+    <footer>
+
+  <div class="wrapper">
+    &copy; Copyright 2019 Marzieh Fadaee.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
+
+    
+  </div>
+
+</footer>
+
+
+    <!-- Load jQuery -->
+<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<!-- Load Common JS -->
+<script src="https://staff.fnwi.uva.nl/m.fadaee/assets/js/common.js"></script>
+
+
+<!-- Load KaTeX -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
+<script src="https://staff.fnwi.uva.nl/m.fadaee/assets/js/katex.js"></script>
+
+
+
+
+<!-- Include custom icon fonts -->
+<link rel="stylesheet" href="https://staff.fnwi.uva.nl/m.fadaee/assets/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="https://staff.fnwi.uva.nl/m.fadaee/assets/css/academicons.min.css">
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-XXXXXXXXX', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+  </body>
+
+</html>
