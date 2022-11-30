@@ -1,0 +1,10 @@
+github_users:
+  - marziehf
+
+github_repos:
+  - zetaalphavector/inPars
+  - unicamp-dl/mMARCO
+  - marziehf/variation-generation
+  - marziehf/DataAugmentationNMT
+  - marziehf/IdiomTranslationDS
+  - marziehf/TS_Embeddings
