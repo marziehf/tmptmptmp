@@ -31,7 +31,7 @@
     <!-- Styles -->
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/publications/">
+    <link rel="canonical" href="https://marziehf.github.io/publications/">
     
     <!-- Dark Mode -->
     
@@ -119,8 +119,80 @@
           <article>
             <!-- _pages/publications.md -->
 <div class="publications">
+  <h2 class="year">2023</h2>
+  <ol class="bibliography"><li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 preview"><img class="preview z-depth-1 rounded" src="/assets/img/publication_preview/"></div>
+
+        <!-- Entry bib key -->
+        <div id="https://doi.org/10.48550/arxiv.2301.01820" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">InPars-v2: Large Language Models as Efficient Dataset Generators for Information Retrieval</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          Vitor Jeronymo, Luiz Bonifacio, Hugo Abonizio, <em>Marzieh Fadaee</em>, Roberto Lotufo, Jakub Zavrel, and <a href="https://sites.google.com/site/rodrigofrassettonogueira/" rel="external nofollow noopener" target="_blank">Rodrigo Nogueira</a>
+</div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            2023
+          </div>
+        
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+          </div>
+
+          <!-- Hidden abstract block -->
+          <div class="abstract hidden">
+            <p>Recently, InPars introduced a method to efficiently use large language models (LLMs) in information retrieval tasks: via few-shot examples, an LLM is induced to generate relevant queries for documents. These synthetic query-document pairs can then be used to train a retriever. However, InPars and, more recently, Promptagator, rely on proprietary LLMs such as GPT-3 and FLAN to generate such datasets. In this work we introduce InPars-v2, a dataset generator that uses open-source LLMs and existing powerful rerankers to select synthetic query-document pairs for training. A simple BM25 retrieval pipeline followed by a monoT5 reranker finetuned on InPars-v2 data achieves new state-of-the-art results on the BEIR benchmark. To allow researchers to further improve our method, we open source the code, synthetic data, and finetuned models: https://github.com/zetaalphavector/inPars/tree/master/tpu</p>
+          </div>
+        </div>
+      </div>
+</li></ol>
+
   <h2 class="year">2022</h2>
   <ol class="bibliography">
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"></div>
+
+        <!-- Entry bib key -->
+        <div id="https://doi.org/10.48550/arxiv.2212.06121" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">In Defense of Cross-Encoders for Zero-Shot Retrieval</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          Guilherme Rosa, Luiz Bonifacio, Vitor Jeronymo, Hugo Abonizio, <em>Marzieh Fadaee</em>, Roberto Lotufo, and <a href="https://sites.google.com/site/rodrigofrassettonogueira/" rel="external nofollow noopener" target="_blank">Rodrigo Nogueira</a>
+</div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            2022
+          </div>
+        
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+          </div>
+
+          <!-- Hidden abstract block -->
+          <div class="abstract hidden">
+            <p>Bi-encoders and cross-encoders are widely used in many state-of-the-art retrieval pipelines. In this work we study the generalization ability of these two types of architectures on a wide range of parameter count on both in-domain and out-of-domain scenarios. We find that the number of parameters and early query-document interactions of cross-encoders play a significant role in the generalization ability of retrieval models. Our experiments show that increasing model size results in marginal gains on in-domain test sets, but much larger gains in new domains never seen during fine-tuning. Furthermore, we show that cross-encoders largely outperform bi-encoders of similar size in several tasks. In the BEIR benchmark, our largest cross-encoder surpasses a state-of-the-art bi-encoder by more than 4 average points. Finally, we show that using bi-encoders as first-stage retrievers provides no gains in comparison to a simpler retriever such as BM25 on out-of-domain tasks. The code is available at https://github.com/guilhermemr04/scaling-zero-shot-retrieval</p>
+          </div>
+        </div>
+      </div>
+</li>
 <li>
 <!-- _layouts/bib.html -->
       <div class="row">
@@ -152,7 +224,7 @@
 
           <!-- Hidden abstract block -->
           <div class="abstract hidden">
-            <p>The information retrieval community has recently witnessed a revolution due to large pretrained transformer models. Another key ingredient for this revolution was the MS MARCO dataset, whose scale and diversity has enabled zero-shot transfer learning to various tasks. However, not all IR tasks and domains can benefit from one single dataset equally. Extensive research in various NLP tasks has shown that using domain-specific training data, as opposed to a general-purpose one, improves the performance of neural models. In this work, we harness the few-shot capabilities of large pretrained language models as synthetic data generators for IR tasks. We show that models finetuned solely on our unsupervised dataset outperform strong baselines such as BM25 as well as recently proposed self-supervised dense retrieval methods. Furthermore, retrievers finetuned on both supervised and our synthetic data achieve better zero-shot transfer than models finetuned only on supervised data. Code, models, and data are available at this https URL.</p>
+            <p>The information retrieval community has recently witnessed a revolution due to large pretrained transformer models. Another key ingredient for this revolution was the MS MARCO dataset, whose scale and diversity has enabled zero-shot transfer learning to various tasks. However, not all IR tasks and domains can benefit from one single dataset equally. Extensive research in various NLP tasks has shown that using domain-specific training data, as opposed to a general-purpose one, improves the performance of neural models. In this work, we harness the few-shot capabilities of large pretrained language models as synthetic data generators for IR tasks. We show that models finetuned solely on our unsupervised dataset outperform strong baselines such as BM25 as well as recently proposed self-supervised dense retrieval methods. Furthermore, retrievers finetuned on both supervised and our synthetic data achieve better zero-shot transfer than models finetuned only on supervised data. Code, models, and data are available at https://github.com/zetaalphavector/inpars</p>
           </div>
         </div>
       </div>
@@ -261,7 +333,7 @@
           <!-- Links/Buttons -->
           <div class="links">
             <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
-            <a href="https://marziehf.github.io/assets/pdf/Thesis.pdf" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a>
+            <a href="https://marziehf.github.io/assets/pdf/Thesis.pdf" class="btn btn-sm z-depth-0" role="button">PDF</a>
           </div>
 
           <!-- Hidden abstract block -->
@@ -546,7 +618,7 @@
     <!-- Footer -->    
     <footer class="fixed-bottom">
       <div class="container mt-0">
-        © Copyright 2022 Marzieh  Fadaee. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme.
+        © Copyright 2023 Marzieh  Fadaee. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme.
 
       </div>
     </footer>
